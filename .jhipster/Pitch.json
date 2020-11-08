@@ -1,0 +1,30 @@
+{
+  "name": "Pitch",
+  "fields": [
+    {
+      "fieldName": "pitch",
+      "fieldType": "Float"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "segment",
+      "otherEntityRelationshipName": "pitches",
+      "relationshipName": "segment",
+      "otherEntityField": "id",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20201108024729",
+  "entityTableName": "pitch",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": ["MusicIntelligence"]
+}

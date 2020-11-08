@@ -1,0 +1,88 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="track">
+            <h2><span jhiTranslate="musicIntelligenceApp.track.detail.title">Track</span> {{ track.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="musicIntelligenceApp.track.discNumber">Disc Number</span></dt>
+                <dd>
+                    <span>{{ track.discNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.track.durationMS">Duration MS</span></dt>
+                <dd>
+                    <span>{{ track.durationMS }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.track.explicit">Explicit</span></dt>
+                <dd>
+                    <span>{{ track.explicit }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.track.href">Href</span></dt>
+                <dd>
+                    <span>{{ track.href }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.track.idSpotify">Id Spotify</span></dt>
+                <dd>
+                    <span>{{ track.idSpotify }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.track.isPlayable">Is Playable</span></dt>
+                <dd>
+                    <span>{{ track.isPlayable }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.track.name">Name</span></dt>
+                <dd>
+                    <span>{{ track.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.track.previewUrl">Preview Url</span></dt>
+                <dd>
+                    <span>{{ track.previewUrl }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.track.trackNumber">Track Number</span></dt>
+                <dd>
+                    <span>{{ track.trackNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.track.uri">Uri</span></dt>
+                <dd>
+                    <span>{{ track.uri }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.track.isLocal">Is Local</span></dt>
+                <dd>
+                    <span>{{ track.isLocal }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.track.externalURL">External URL</span></dt>
+                <dd>
+                    <div *ngIf="track.externalURL">
+                        <a [routerLink]="['/external-url', track.externalURL?.id, 'view']">{{ track.externalURL?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.track.audioAnalysis">Audio Analysis</span></dt>
+                <dd>
+                    <div *ngIf="track.audioAnalysis">
+                        <a [routerLink]="['/audio-analysis', track.audioAnalysis?.id, 'view']">{{ track.audioAnalysis?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.track.audioFeatures">Audio Features</span></dt>
+                <dd>
+                    <div *ngIf="track.audioFeatures">
+                        <a [routerLink]="['/audio-features', track.audioFeatures?.id, 'view']">{{ track.audioFeatures?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/track', track.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

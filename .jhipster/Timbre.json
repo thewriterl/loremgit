@@ -1,0 +1,30 @@
+{
+  "name": "Timbre",
+  "fields": [
+    {
+      "fieldName": "timbre",
+      "fieldType": "Float"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "segment",
+      "otherEntityRelationshipName": "timbre",
+      "relationshipName": "segment",
+      "otherEntityField": "id",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20201108024829",
+  "entityTableName": "timbre",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": ["MusicIntelligence"]
+}

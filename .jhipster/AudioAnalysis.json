@@ -1,0 +1,54 @@
+{
+  "name": "AudioAnalysis",
+  "fields": [],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "section",
+      "otherEntityRelationshipName": "audioAnalysis",
+      "relationshipName": "sections"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "timeInterval",
+      "otherEntityRelationshipName": "audioAnalysis",
+      "relationshipName": "bars"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "timeInterval",
+      "otherEntityRelationshipName": "audioAnalysis",
+      "relationshipName": "beats"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "segment",
+      "otherEntityRelationshipName": "audioAnalysis",
+      "relationshipName": "segments"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "timeInterval",
+      "otherEntityRelationshipName": "audioAnalysis",
+      "relationshipName": "tatums"
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "track",
+      "otherEntityRelationshipName": "audioAnalysis",
+      "relationshipName": "track",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20201108024429",
+  "entityTableName": "audio_analysis",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": ["MusicIntelligence"]
+}

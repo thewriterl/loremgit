@@ -1,0 +1,44 @@
+{
+  "name": "Image",
+  "fields": [
+    {
+      "fieldName": "height",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "url",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "width",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "artist",
+      "otherEntityRelationshipName": "image",
+      "relationshipName": "artist",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "album",
+      "otherEntityRelationshipName": "image",
+      "relationshipName": "album",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20201108023729",
+  "entityTableName": "image",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": ["MusicIntelligence"]
+}

@@ -1,0 +1,33 @@
+{
+  "musicIntelligenceApp": {
+    "album": {
+      "home": {
+        "title": "Albums",
+        "createLabel": "Créer un nouveau Album",
+        "createOrEditLabel": "Créer ou éditer un Album",
+        "notFound": "Aucun Album trouvé"
+      },
+      "created": "Un nouveau Album a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Album avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Album avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Album {{ id }} ?"
+      },
+      "detail": {
+        "title": "Album"
+      },
+      "albumType": "Album Type",
+      "href": "Href",
+      "idSpotify": "Id Spotify",
+      "label": "Label",
+      "name": "Name",
+      "popularity": "Popularity",
+      "releaseDate": "Release Date",
+      "uri": "Uri",
+      "image": "Image",
+      "externalURL": "External URL",
+      "genre": "Genre",
+      "artist": "Artist"
+    }
+  }
+}

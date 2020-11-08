@@ -1,0 +1,23 @@
+{
+  "musicIntelligenceApp": {
+    "pitch": {
+      "home": {
+        "title": "Pitches",
+        "createLabel": "Créer un nouveau Pitch",
+        "createOrEditLabel": "Créer ou éditer un Pitch",
+        "notFound": "Aucun Pitch trouvé"
+      },
+      "created": "Un nouveau Pitch a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Pitch avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Pitch avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Pitch {{ id }} ?"
+      },
+      "detail": {
+        "title": "Pitch"
+      },
+      "pitch": "Pitch",
+      "segment": "Segment"
+    }
+  }
+}

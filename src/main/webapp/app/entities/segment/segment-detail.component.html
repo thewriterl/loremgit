@@ -1,0 +1,72 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="segment">
+            <h2><span jhiTranslate="musicIntelligenceApp.segment.detail.title">Segment</span> {{ segment.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="musicIntelligenceApp.segment.start">Start</span></dt>
+                <dd>
+                    <span>{{ segment.start }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.segment.duration">Duration</span></dt>
+                <dd>
+                    <span>{{ segment.duration }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.segment.confidence">Confidence</span></dt>
+                <dd>
+                    <span>{{ segment.confidence }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.segment.loudnessStart">Loudness Start</span></dt>
+                <dd>
+                    <span>{{ segment.loudnessStart }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.segment.loudnessMax">Loudness Max</span></dt>
+                <dd>
+                    <span>{{ segment.loudnessMax }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.segment.loudnessMaxTime">Loudness Max Time</span></dt>
+                <dd>
+                    <span>{{ segment.loudnessMaxTime }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.segment.loudnessEnd">Loudness End</span></dt>
+                <dd>
+                    <span>{{ segment.loudnessEnd }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.segment.pitches">Pitches</span></dt>
+                <dd>
+                    <span *ngFor="let pitches of segment.pitches; let last = last">
+                        <a [routerLink]="['/pitch', pitches?.id, 'view']">{{ pitches.id }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.segment.timbre">Timbre</span></dt>
+                <dd>
+                    <span *ngFor="let timbre of segment.timbres; let last = last">
+                        <a [routerLink]="['/timbre', timbre?.id, 'view']">{{ timbre.id }}</a>{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.segment.audioAnalysis">Audio Analysis</span></dt>
+                <dd>
+                    <div *ngIf="segment.audioAnalysis">
+                        <a [routerLink]="['/audio-analysis', segment.audioAnalysis?.id, 'view']">{{ segment.audioAnalysis?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/segment', segment.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

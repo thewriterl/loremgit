@@ -1,0 +1,31 @@
+{
+  "musicIntelligenceApp": {
+    "segment": {
+      "home": {
+        "title": "Segments",
+        "createLabel": "Créer un nouveau Segment",
+        "createOrEditLabel": "Créer ou éditer un Segment",
+        "notFound": "Aucun Segment trouvé"
+      },
+      "created": "Un nouveau Segment a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Segment avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Segment avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Segment {{ id }} ?"
+      },
+      "detail": {
+        "title": "Segment"
+      },
+      "start": "Start",
+      "duration": "Duration",
+      "confidence": "Confidence",
+      "loudnessStart": "Loudness Start",
+      "loudnessMax": "Loudness Max",
+      "loudnessMaxTime": "Loudness Max Time",
+      "loudnessEnd": "Loudness End",
+      "pitches": "Pitches",
+      "timbre": "Timbre",
+      "audioAnalysis": "Audio Analysis"
+    }
+  }
+}

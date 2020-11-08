@@ -1,0 +1,27 @@
+{
+  "musicIntelligenceApp": {
+    "audioAnalysis": {
+      "home": {
+        "title": "Audio Analyses",
+        "createLabel": "Create a new Audio Analysis",
+        "createOrEditLabel": "Create or edit a Audio Analysis",
+        "notFound": "No Audio Analyses found"
+      },
+      "created": "A new Audio Analysis is created with identifier {{ param }}",
+      "updated": "A Audio Analysis is updated with identifier {{ param }}",
+      "deleted": "A Audio Analysis is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Audio Analysis {{ id }}?"
+      },
+      "detail": {
+        "title": "Audio Analysis"
+      },
+      "sections": "Sections",
+      "bars": "Bars",
+      "beats": "Beats",
+      "segments": "Segments",
+      "tatums": "Tatums",
+      "track": "Track"
+    }
+  }
+}

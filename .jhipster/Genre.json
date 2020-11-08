@@ -1,0 +1,36 @@
+{
+  "name": "Genre",
+  "fields": [
+    {
+      "fieldName": "genre",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "artist",
+      "otherEntityRelationshipName": "genre",
+      "relationshipName": "artist",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "album",
+      "otherEntityRelationshipName": "genre",
+      "relationshipName": "album",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201108023829",
+  "entityTableName": "genre",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": ["MusicIntelligence"]
+}

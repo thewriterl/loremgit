@@ -1,0 +1,26 @@
+{
+  "musicIntelligenceApp": {
+    "externalURL": {
+      "home": {
+        "title": "ExternalURLS",
+        "createLabel": "Créer un nouveau External URL",
+        "createOrEditLabel": "Créer ou éditer un External URL",
+        "notFound": "Aucun External URL trouvé"
+      },
+      "created": "Un nouveau External URL a été créé avec l'identifiant {{ param }}",
+      "updated": "Le External URL avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le External URL avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le External URL {{ id }} ?"
+      },
+      "detail": {
+        "title": "External URL"
+      },
+      "source": "Source",
+      "href": "Href",
+      "artist": "Artist",
+      "album": "Album",
+      "track": "Track"
+    }
+  }
+}

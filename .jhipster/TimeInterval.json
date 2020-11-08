@@ -1,0 +1,51 @@
+{
+  "name": "TimeInterval",
+  "fields": [
+    {
+      "fieldName": "start",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "duration",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "confidence",
+      "fieldType": "Float"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "audioAnalysis",
+      "otherEntityRelationshipName": "bars",
+      "relationshipName": "audioAnalysis",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "audioAnalysis",
+      "otherEntityRelationshipName": "beats",
+      "relationshipName": "audioAnalysis",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "audioAnalysis",
+      "otherEntityRelationshipName": "tatums",
+      "relationshipName": "audioAnalysis",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201108024329",
+  "entityTableName": "time_interval",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": ["MusicIntelligence"]
+}

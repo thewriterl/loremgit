@@ -1,0 +1,36 @@
+{
+  "musicIntelligenceApp": {
+    "track": {
+      "home": {
+        "title": "Tracks",
+        "createLabel": "Create a new Track",
+        "createOrEditLabel": "Create or edit a Track",
+        "notFound": "No Tracks found"
+      },
+      "created": "A new Track is created with identifier {{ param }}",
+      "updated": "A Track is updated with identifier {{ param }}",
+      "deleted": "A Track is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Track {{ id }}?"
+      },
+      "detail": {
+        "title": "Track"
+      },
+      "discNumber": "Disc Number",
+      "durationMS": "Duration MS",
+      "explicit": "Explicit",
+      "href": "Href",
+      "idSpotify": "Id Spotify",
+      "isPlayable": "Is Playable",
+      "name": "Name",
+      "previewUrl": "Preview Url",
+      "trackNumber": "Track Number",
+      "uri": "Uri",
+      "isLocal": "Is Local",
+      "externalURL": "External URL",
+      "audioAnalysis": "Audio Analysis",
+      "audioFeatures": "Audio Features",
+      "artist": "Artist"
+    }
+  }
+}

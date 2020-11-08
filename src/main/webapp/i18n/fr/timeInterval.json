@@ -1,0 +1,27 @@
+{
+  "musicIntelligenceApp": {
+    "timeInterval": {
+      "home": {
+        "title": "TimeIntervals",
+        "createLabel": "Créer un nouveau Time Interval",
+        "createOrEditLabel": "Créer ou éditer un Time Interval",
+        "notFound": "Aucun Time Interval trouvé"
+      },
+      "created": "Un nouveau Time Interval a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Time Interval avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Time Interval avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Time Interval {{ id }} ?"
+      },
+      "detail": {
+        "title": "Time Interval"
+      },
+      "start": "Start",
+      "duration": "Duration",
+      "confidence": "Confidence",
+      "audioAnalysis": "Audio Analysis",
+      "audioAnalysis": "Audio Analysis",
+      "audioAnalysis": "Audio Analysis"
+    }
+  }
+}

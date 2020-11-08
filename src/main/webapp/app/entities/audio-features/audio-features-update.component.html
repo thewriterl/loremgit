@@ -1,0 +1,122 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-audio-features-heading" jhiTranslate="musicIntelligenceApp.audioFeatures.home.createOrEditLabel">Create or edit a Audio Features</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.audioFeatures.durationMs" for="field_durationMs">Duration Ms</label>
+                    <input type="number" class="form-control" name="durationMs" id="field_durationMs"
+                           formControlName="durationMs"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.audioFeatures.key" for="field_key">Key</label>
+                    <input type="number" class="form-control" name="key" id="field_key"
+                           formControlName="key"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.audioFeatures.mode" for="field_mode">Mode</label>
+                    <input type="number" class="form-control" name="mode" id="field_mode"
+                           formControlName="mode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.audioFeatures.timeSignature" for="field_timeSignature">Time Signature</label>
+                    <input type="number" class="form-control" name="timeSignature" id="field_timeSignature"
+                           formControlName="timeSignature"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.audioFeatures.acousticness" for="field_acousticness">Acousticness</label>
+                    <input type="number" class="form-control" name="acousticness" id="field_acousticness"
+                           formControlName="acousticness"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.audioFeatures.daceability" for="field_daceability">Daceability</label>
+                    <input type="number" class="form-control" name="daceability" id="field_daceability"
+                           formControlName="daceability"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.audioFeatures.energy" for="field_energy">Energy</label>
+                    <input type="number" class="form-control" name="energy" id="field_energy"
+                           formControlName="energy"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.audioFeatures.instrumentalness" for="field_instrumentalness">Instrumentalness</label>
+                    <input type="number" class="form-control" name="instrumentalness" id="field_instrumentalness"
+                           formControlName="instrumentalness"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.audioFeatures.liveness" for="field_liveness">Liveness</label>
+                    <input type="number" class="form-control" name="liveness" id="field_liveness"
+                           formControlName="liveness"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.audioFeatures.loudness" for="field_loudness">Loudness</label>
+                    <input type="number" class="form-control" name="loudness" id="field_loudness"
+                           formControlName="loudness"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.audioFeatures.speechiness" for="field_speechiness">Speechiness</label>
+                    <input type="number" class="form-control" name="speechiness" id="field_speechiness"
+                           formControlName="speechiness"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.audioFeatures.valence" for="field_valence">Valence</label>
+                    <input type="number" class="form-control" name="valence" id="field_valence"
+                           formControlName="valence"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.audioFeatures.tempo" for="field_tempo">Tempo</label>
+                    <input type="number" class="form-control" name="tempo" id="field_tempo"
+                           formControlName="tempo"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.audioFeatures.uri" for="field_uri">Uri</label>
+                    <input type="text" class="form-control" name="uri" id="field_uri"
+                           formControlName="uri"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.audioFeatures.trackHref" for="field_trackHref">Track Href</label>
+                    <input type="text" class="form-control" name="trackHref" id="field_trackHref"
+                           formControlName="trackHref"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.audioFeatures.analysisUrl" for="field_analysisUrl">Analysis Url</label>
+                    <input type="text" class="form-control" name="analysisUrl" id="field_analysisUrl"
+                           formControlName="analysisUrl"/>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

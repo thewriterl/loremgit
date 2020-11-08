@@ -1,0 +1,10 @@
+{
+  "musicIntelligenceApp": {
+    "AlbumType": {
+      "null": "",
+      "ALBUM": "ALBUM",
+      "SINGLE": "SINGLE",
+      "COMPILATION": "COMPILATION"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity TimeInterval.
+    -->
+    <changeSet id="20201108024329-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="audio_analysis_id"
+                                 baseTableName="time_interval"
+                                 constraintName="fk_time_interval_audio_analysis_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="audio_analysis"/>
+
+        <addForeignKeyConstraint baseColumnNames="audio_analysis_id"
+                                 baseTableName="time_interval"
+                                 constraintName="fk_time_interval_audio_analysis_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="audio_analysis"/>
+
+        <addForeignKeyConstraint baseColumnNames="audio_analysis_id"
+                                 baseTableName="time_interval"
+                                 constraintName="fk_time_interval_audio_analysis_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="audio_analysis"/>
+
+    </changeSet>
+</databaseChangeLog>

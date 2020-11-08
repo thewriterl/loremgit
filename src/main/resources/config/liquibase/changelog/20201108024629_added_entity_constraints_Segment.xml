@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity Segment.
+    -->
+    <changeSet id="20201108024629-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="segment_id"
+                                 baseTableName="segment_pitches"
+                                 constraintName="fk_segment_pitches_segment_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="segment"/>
+
+        <addForeignKeyConstraint baseColumnNames="pitches_id"
+                                 baseTableName="segment_pitches"
+                                 constraintName="fk_segment_pitches_pitches_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pitch"/>
+        
+        <addForeignKeyConstraint baseColumnNames="segment_id"
+                                 baseTableName="segment_timbre"
+                                 constraintName="fk_segment_timbre_segment_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="segment"/>
+
+        <addForeignKeyConstraint baseColumnNames="timbre_id"
+                                 baseTableName="segment_timbre"
+                                 constraintName="fk_segment_timbre_timbre_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="timbre"/>
+        
+        <addForeignKeyConstraint baseColumnNames="audio_analysis_id"
+                                 baseTableName="segment"
+                                 constraintName="fk_segment_audio_analysis_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="audio_analysis"/>
+
+    </changeSet>
+</databaseChangeLog>

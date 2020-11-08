@@ -1,0 +1,73 @@
+{
+  "name": "Section",
+  "fields": [
+    {
+      "fieldName": "start",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "duration",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "confidence",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "loudness",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "tempo",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "tempoConfidence",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "key",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "keyConfidence",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "mode",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "modeConfidence",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "timeSignature",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "timeSignatureConfidence",
+      "fieldType": "Float"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "audioAnalysis",
+      "otherEntityRelationshipName": "sections",
+      "relationshipName": "audioAnalysis",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201108024529",
+  "entityTableName": "section",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": ["MusicIntelligence"]
+}

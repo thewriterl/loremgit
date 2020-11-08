@@ -1,0 +1,34 @@
+{
+  "musicIntelligenceApp": {
+    "section": {
+      "home": {
+        "title": "Sections",
+        "createLabel": "Créer un nouveau Section",
+        "createOrEditLabel": "Créer ou éditer un Section",
+        "notFound": "Aucun Section trouvé"
+      },
+      "created": "Un nouveau Section a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Section avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Section avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Section {{ id }} ?"
+      },
+      "detail": {
+        "title": "Section"
+      },
+      "start": "Start",
+      "duration": "Duration",
+      "confidence": "Confidence",
+      "loudness": "Loudness",
+      "tempo": "Tempo",
+      "tempoConfidence": "Tempo Confidence",
+      "key": "Key",
+      "keyConfidence": "Key Confidence",
+      "mode": "Mode",
+      "modeConfidence": "Mode Confidence",
+      "timeSignature": "Time Signature",
+      "timeSignatureConfidence": "Time Signature Confidence",
+      "audioAnalysis": "Audio Analysis"
+    }
+  }
+}

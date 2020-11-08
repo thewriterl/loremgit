@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity Track.
+    -->
+    <changeSet id="20201108024229-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="externalurl_id"
+                                 baseTableName="track"
+                                 constraintName="fk_track_externalurl_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="external_url"/>
+
+        <addForeignKeyConstraint baseColumnNames="audio_analysis_id"
+                                 baseTableName="track"
+                                 constraintName="fk_track_audio_analysis_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="audio_analysis"/>
+
+        <addForeignKeyConstraint baseColumnNames="audio_features_id"
+                                 baseTableName="track"
+                                 constraintName="fk_track_audio_features_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="audio_features"/>
+
+    </changeSet>
+</databaseChangeLog>
