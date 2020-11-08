@@ -1,0 +1,70 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="artist">
+            <h2><span jhiTranslate="musicIntelligenceApp.artist.detail.title">Artist</span> {{ artist.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="musicIntelligenceApp.artist.name">Name</span></dt>
+                <dd>
+                    <span>{{ artist.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.artist.popularity">Popularity</span></dt>
+                <dd>
+                    <span>{{ artist.popularity }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.artist.idSpotify">Id Spotify</span></dt>
+                <dd>
+                    <span>{{ artist.idSpotify }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.artist.href">Href</span></dt>
+                <dd>
+                    <span>{{ artist.href }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.artist.followers">Followers</span></dt>
+                <dd>
+                    <span>{{ artist.followers }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.artist.image">Image</span></dt>
+                <dd>
+                    <div *ngIf="artist.image">
+                        <a [routerLink]="['/image', artist.image?.id, 'view']">{{ artist.image?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.artist.externalURL">External URL</span></dt>
+                <dd>
+                    <div *ngIf="artist.externalURL">
+                        <a [routerLink]="['/external-url', artist.externalURL?.id, 'view']">{{ artist.externalURL?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.artist.album">Album</span></dt>
+                <dd>
+                    <div *ngIf="artist.album">
+                        <a [routerLink]="['/album', artist.album?.id, 'view']">{{ artist.album?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.artist.track">Track</span></dt>
+                <dd>
+                    <div *ngIf="artist.track">
+                        <a [routerLink]="['/track', artist.track?.id, 'view']">{{ artist.track?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/artist', artist.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

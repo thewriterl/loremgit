@@ -1,0 +1,23 @@
+{
+  "musicIntelligenceApp": {
+    "timbre": {
+      "home": {
+        "title": "Timbres",
+        "createLabel": "Créer un nouveau Timbre",
+        "createOrEditLabel": "Créer ou éditer un Timbre",
+        "notFound": "Aucun Timbre trouvé"
+      },
+      "created": "Un nouveau Timbre a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Timbre avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Timbre avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Timbre {{ id }} ?"
+      },
+      "detail": {
+        "title": "Timbre"
+      },
+      "timbre": "Timbre",
+      "segment": "Segment"
+    }
+  }
+}

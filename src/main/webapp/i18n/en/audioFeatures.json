@@ -1,0 +1,38 @@
+{
+  "musicIntelligenceApp": {
+    "audioFeatures": {
+      "home": {
+        "title": "Audio Features",
+        "createLabel": "Create a new Audio Features",
+        "createOrEditLabel": "Create or edit a Audio Features",
+        "notFound": "No Audio Features found"
+      },
+      "created": "A new Audio Features is created with identifier {{ param }}",
+      "updated": "A Audio Features is updated with identifier {{ param }}",
+      "deleted": "A Audio Features is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Audio Features {{ id }}?"
+      },
+      "detail": {
+        "title": "Audio Features"
+      },
+      "durationMs": "Duration Ms",
+      "key": "Key",
+      "mode": "Mode",
+      "timeSignature": "Time Signature",
+      "acousticness": "Acousticness",
+      "daceability": "Daceability",
+      "energy": "Energy",
+      "instrumentalness": "Instrumentalness",
+      "liveness": "Liveness",
+      "loudness": "Loudness",
+      "speechiness": "Speechiness",
+      "valence": "Valence",
+      "tempo": "Tempo",
+      "uri": "Uri",
+      "trackHref": "Track Href",
+      "analysisUrl": "Analysis Url",
+      "track": "Track"
+    }
+  }
+}

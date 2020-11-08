@@ -1,14 +1,22 @@
 import { NgModule } from '@angular/core';
-import { TestetsetsetSharedLibsModule } from './shared-libs.module';
+import { MusicIntelligenceSharedLibsModule } from './shared-libs.module';
+import { FindLanguageFromKeyPipe } from './language/find-language-from-key.pipe';
 import { AlertComponent } from './alert/alert.component';
 import { AlertErrorComponent } from './alert/alert-error.component';
 import { LoginModalComponent } from './login/login.component';
 import { HasAnyAuthorityDirective } from './auth/has-any-authority.directive';
 
 @NgModule({
-  imports: [TestetsetsetSharedLibsModule],
-  declarations: [AlertComponent, AlertErrorComponent, LoginModalComponent, HasAnyAuthorityDirective],
+  imports: [MusicIntelligenceSharedLibsModule],
+  declarations: [FindLanguageFromKeyPipe, AlertComponent, AlertErrorComponent, LoginModalComponent, HasAnyAuthorityDirective],
   entryComponents: [LoginModalComponent],
-  exports: [TestetsetsetSharedLibsModule, AlertComponent, AlertErrorComponent, LoginModalComponent, HasAnyAuthorityDirective],
+  exports: [
+    MusicIntelligenceSharedLibsModule,
+    FindLanguageFromKeyPipe,
+    AlertComponent,
+    AlertErrorComponent,
+    LoginModalComponent,
+    HasAnyAuthorityDirective,
+  ],
 })
-export class TestetsetsetSharedModule {}
+export class MusicIntelligenceSharedModule {}

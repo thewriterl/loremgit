@@ -1,0 +1,23 @@
+{
+  "musicIntelligenceApp": {
+    "pitch": {
+      "home": {
+        "title": "Pitches",
+        "createLabel": "Create a new Pitch",
+        "createOrEditLabel": "Create or edit a Pitch",
+        "notFound": "No Pitches found"
+      },
+      "created": "A new Pitch is created with identifier {{ param }}",
+      "updated": "A Pitch is updated with identifier {{ param }}",
+      "deleted": "A Pitch is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Pitch {{ id }}?"
+      },
+      "detail": {
+        "title": "Pitch"
+      },
+      "pitch": "Pitch",
+      "segment": "Segment"
+    }
+  }
+}

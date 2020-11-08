@@ -1,0 +1,106 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-section-heading" jhiTranslate="musicIntelligenceApp.section.home.createOrEditLabel">Create or edit a Section</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.section.start" for="field_start">Start</label>
+                    <input type="number" class="form-control" name="start" id="field_start"
+                           formControlName="start"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.section.duration" for="field_duration">Duration</label>
+                    <input type="number" class="form-control" name="duration" id="field_duration"
+                           formControlName="duration"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.section.confidence" for="field_confidence">Confidence</label>
+                    <input type="number" class="form-control" name="confidence" id="field_confidence"
+                           formControlName="confidence"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.section.loudness" for="field_loudness">Loudness</label>
+                    <input type="number" class="form-control" name="loudness" id="field_loudness"
+                           formControlName="loudness"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.section.tempo" for="field_tempo">Tempo</label>
+                    <input type="number" class="form-control" name="tempo" id="field_tempo"
+                           formControlName="tempo"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.section.tempoConfidence" for="field_tempoConfidence">Tempo Confidence</label>
+                    <input type="number" class="form-control" name="tempoConfidence" id="field_tempoConfidence"
+                           formControlName="tempoConfidence"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.section.key" for="field_key">Key</label>
+                    <input type="number" class="form-control" name="key" id="field_key"
+                           formControlName="key"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.section.keyConfidence" for="field_keyConfidence">Key Confidence</label>
+                    <input type="number" class="form-control" name="keyConfidence" id="field_keyConfidence"
+                           formControlName="keyConfidence"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.section.mode" for="field_mode">Mode</label>
+                    <input type="number" class="form-control" name="mode" id="field_mode"
+                           formControlName="mode"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.section.modeConfidence" for="field_modeConfidence">Mode Confidence</label>
+                    <input type="number" class="form-control" name="modeConfidence" id="field_modeConfidence"
+                           formControlName="modeConfidence"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.section.timeSignature" for="field_timeSignature">Time Signature</label>
+                    <input type="number" class="form-control" name="timeSignature" id="field_timeSignature"
+                           formControlName="timeSignature"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.section.timeSignatureConfidence" for="field_timeSignatureConfidence">Time Signature Confidence</label>
+                    <input type="number" class="form-control" name="timeSignatureConfidence" id="field_timeSignatureConfidence"
+                           formControlName="timeSignatureConfidence"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.section.audioAnalysis" for="field_audioAnalysis">Audio Analysis</label>
+                    <select class="form-control" id="field_audioAnalysis" name="audioAnalysis" formControlName="audioAnalysis">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="audioAnalysisOption.id === editForm.get('audioAnalysis')!.value?.id ? editForm.get('audioAnalysis')!.value : audioAnalysisOption" *ngFor="let audioAnalysisOption of audioanalyses; trackBy: trackById">{{ audioAnalysisOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

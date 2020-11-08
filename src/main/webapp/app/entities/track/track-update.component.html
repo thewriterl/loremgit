@@ -1,0 +1,116 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-track-heading" jhiTranslate="musicIntelligenceApp.track.home.createOrEditLabel">Create or edit a Track</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.track.discNumber" for="field_discNumber">Disc Number</label>
+                    <input type="number" class="form-control" name="discNumber" id="field_discNumber"
+                           formControlName="discNumber"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.track.durationMS" for="field_durationMS">Duration MS</label>
+                    <input type="number" class="form-control" name="durationMS" id="field_durationMS"
+                           formControlName="durationMS"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.track.explicit" for="field_explicit">Explicit</label>
+                    <input type="checkbox" class="form-control" name="explicit" id="field_explicit"
+                           formControlName="explicit"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.track.href" for="field_href">Href</label>
+                    <input type="text" class="form-control" name="href" id="field_href"
+                           formControlName="href"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.track.idSpotify" for="field_idSpotify">Id Spotify</label>
+                    <input type="text" class="form-control" name="idSpotify" id="field_idSpotify"
+                           formControlName="idSpotify"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.track.isPlayable" for="field_isPlayable">Is Playable</label>
+                    <input type="checkbox" class="form-control" name="isPlayable" id="field_isPlayable"
+                           formControlName="isPlayable"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.track.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                           formControlName="name"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.track.previewUrl" for="field_previewUrl">Preview Url</label>
+                    <input type="text" class="form-control" name="previewUrl" id="field_previewUrl"
+                           formControlName="previewUrl"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.track.trackNumber" for="field_trackNumber">Track Number</label>
+                    <input type="number" class="form-control" name="trackNumber" id="field_trackNumber"
+                           formControlName="trackNumber"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.track.uri" for="field_uri">Uri</label>
+                    <input type="text" class="form-control" name="uri" id="field_uri"
+                           formControlName="uri"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.track.isLocal" for="field_isLocal">Is Local</label>
+                    <input type="checkbox" class="form-control" name="isLocal" id="field_isLocal"
+                           formControlName="isLocal"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.track.externalURL" for="field_externalURL">External URL</label>
+                    <select class="form-control" id="field_externalURL" name="externalURL" formControlName="externalURL">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="externalURLOption.id === editForm.get('externalURL')!.value?.id ? editForm.get('externalURL')!.value : externalURLOption" *ngFor="let externalURLOption of externalurls; trackBy: trackById">{{ externalURLOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.track.audioAnalysis" for="field_audioAnalysis">Audio Analysis</label>
+                    <select class="form-control" id="field_audioAnalysis" name="audioAnalysis" formControlName="audioAnalysis">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="audioAnalysisOption.id === editForm.get('audioAnalysis')!.value?.id ? editForm.get('audioAnalysis')!.value : audioAnalysisOption" *ngFor="let audioAnalysisOption of audioanalyses; trackBy: trackById">{{ audioAnalysisOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.track.audioFeatures" for="field_audioFeatures">Audio Features</label>
+                    <select class="form-control" id="field_audioFeatures" name="audioFeatures" formControlName="audioFeatures">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="audioFeaturesOption.id === editForm.get('audioFeatures')!.value?.id ? editForm.get('audioFeatures')!.value : audioFeaturesOption" *ngFor="let audioFeaturesOption of audiofeatures; trackBy: trackById">{{ audioFeaturesOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

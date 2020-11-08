@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="timeInterval">
+            <h2><span jhiTranslate="musicIntelligenceApp.timeInterval.detail.title">Time Interval</span> {{ timeInterval.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="musicIntelligenceApp.timeInterval.start">Start</span></dt>
+                <dd>
+                    <span>{{ timeInterval.start }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.timeInterval.duration">Duration</span></dt>
+                <dd>
+                    <span>{{ timeInterval.duration }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.timeInterval.confidence">Confidence</span></dt>
+                <dd>
+                    <span>{{ timeInterval.confidence }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.timeInterval.audioAnalysis">Audio Analysis</span></dt>
+                <dd>
+                    <div *ngIf="timeInterval.audioAnalysis">
+                        <a [routerLink]="['/audio-analysis', timeInterval.audioAnalysis?.id, 'view']">{{ timeInterval.audioAnalysis?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.timeInterval.audioAnalysis">Audio Analysis</span></dt>
+                <dd>
+                    <div *ngIf="timeInterval.audioAnalysis">
+                        <a [routerLink]="['/audio-analysis', timeInterval.audioAnalysis?.id, 'view']">{{ timeInterval.audioAnalysis?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.timeInterval.audioAnalysis">Audio Analysis</span></dt>
+                <dd>
+                    <div *ngIf="timeInterval.audioAnalysis">
+                        <a [routerLink]="['/audio-analysis', timeInterval.audioAnalysis?.id, 'view']">{{ timeInterval.audioAnalysis?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/time-interval', timeInterval.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

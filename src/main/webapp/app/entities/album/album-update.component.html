@@ -1,0 +1,97 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-album-heading" jhiTranslate="musicIntelligenceApp.album.home.createOrEditLabel">Create or edit a Album</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.album.albumType" for="field_albumType">Album Type</label>
+                    <select class="form-control" name="albumType" formControlName="albumType" id="field_albumType">
+                        <option value="ALBUM">{{ 'musicIntelligenceApp.AlbumType.ALBUM' | translate }}</option>
+                        <option value="SINGLE">{{ 'musicIntelligenceApp.AlbumType.SINGLE' | translate }}</option>
+                        <option value="COMPILATION">{{ 'musicIntelligenceApp.AlbumType.COMPILATION' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.album.href" for="field_href">Href</label>
+                    <input type="text" class="form-control" name="href" id="field_href"
+                           formControlName="href"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.album.idSpotify" for="field_idSpotify">Id Spotify</label>
+                    <input type="text" class="form-control" name="idSpotify" id="field_idSpotify"
+                           formControlName="idSpotify"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.album.label" for="field_label">Label</label>
+                    <input type="text" class="form-control" name="label" id="field_label"
+                           formControlName="label"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.album.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                           formControlName="name"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.album.popularity" for="field_popularity">Popularity</label>
+                    <input type="number" class="form-control" name="popularity" id="field_popularity"
+                           formControlName="popularity"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.album.releaseDate" for="field_releaseDate">Release Date</label>
+                    <div class="input-group">
+                        <input id="field_releaseDate" type="text" class="form-control" name="releaseDate" ngbDatepicker #releaseDateDp="ngbDatepicker" formControlName="releaseDate"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="releaseDateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.album.uri" for="field_uri">Uri</label>
+                    <input type="text" class="form-control" name="uri" id="field_uri"
+                           formControlName="uri"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.album.image" for="field_image">Image</label>
+                    <select class="form-control" id="field_image" name="image" formControlName="image">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="imageOption.id === editForm.get('image')!.value?.id ? editForm.get('image')!.value : imageOption" *ngFor="let imageOption of images; trackBy: trackById">{{ imageOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.album.externalURL" for="field_externalURL">External URL</label>
+                    <select class="form-control" id="field_externalURL" name="externalURL" formControlName="externalURL">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="externalURLOption.id === editForm.get('externalURL')!.value?.id ? editForm.get('externalURL')!.value : externalURLOption" *ngFor="let externalURLOption of externalurls; trackBy: trackById">{{ externalURLOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,92 @@
+{
+  "name": "Track",
+  "fields": [
+    {
+      "fieldName": "discNumber",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "durationMS",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "explicit",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "href",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "idSpotify",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isPlayable",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "previewUrl",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "trackNumber",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "uri",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "isLocal",
+      "fieldType": "Boolean"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "externalURL",
+      "otherEntityRelationshipName": "track",
+      "relationshipName": "externalURL",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "audioAnalysis",
+      "otherEntityRelationshipName": "track",
+      "relationshipName": "audioAnalysis",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "audioFeatures",
+      "otherEntityRelationshipName": "track",
+      "relationshipName": "audioFeatures",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "artist",
+      "otherEntityRelationshipName": "track",
+      "relationshipName": "artist"
+    }
+  ],
+  "changelogDate": "20201108024229",
+  "entityTableName": "track",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": ["MusicIntelligence"]
+}

@@ -1,0 +1,91 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="musicIntelligenceApp.audioFeatures.home.title">Audio Features</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-audio-features" [routerLink]="['/audio-features/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="musicIntelligenceApp.audioFeatures.home.createLabel">
+            Create a new Audio Features
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="audioFeatures?.length === 0">
+        <span jhiTranslate="musicIntelligenceApp.audioFeatures.home.notFound">No audioFeatures found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="audioFeatures && audioFeatures.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="musicIntelligenceApp.audioFeatures.durationMs">Duration Ms</span></th>
+                    <th scope="col" ><span jhiTranslate="musicIntelligenceApp.audioFeatures.key">Key</span></th>
+                    <th scope="col" ><span jhiTranslate="musicIntelligenceApp.audioFeatures.mode">Mode</span></th>
+                    <th scope="col" ><span jhiTranslate="musicIntelligenceApp.audioFeatures.timeSignature">Time Signature</span></th>
+                    <th scope="col" ><span jhiTranslate="musicIntelligenceApp.audioFeatures.acousticness">Acousticness</span></th>
+                    <th scope="col" ><span jhiTranslate="musicIntelligenceApp.audioFeatures.daceability">Daceability</span></th>
+                    <th scope="col" ><span jhiTranslate="musicIntelligenceApp.audioFeatures.energy">Energy</span></th>
+                    <th scope="col" ><span jhiTranslate="musicIntelligenceApp.audioFeatures.instrumentalness">Instrumentalness</span></th>
+                    <th scope="col" ><span jhiTranslate="musicIntelligenceApp.audioFeatures.liveness">Liveness</span></th>
+                    <th scope="col" ><span jhiTranslate="musicIntelligenceApp.audioFeatures.loudness">Loudness</span></th>
+                    <th scope="col" ><span jhiTranslate="musicIntelligenceApp.audioFeatures.speechiness">Speechiness</span></th>
+                    <th scope="col" ><span jhiTranslate="musicIntelligenceApp.audioFeatures.valence">Valence</span></th>
+                    <th scope="col" ><span jhiTranslate="musicIntelligenceApp.audioFeatures.tempo">Tempo</span></th>
+                    <th scope="col" ><span jhiTranslate="musicIntelligenceApp.audioFeatures.uri">Uri</span></th>
+                    <th scope="col" ><span jhiTranslate="musicIntelligenceApp.audioFeatures.trackHref">Track Href</span></th>
+                    <th scope="col" ><span jhiTranslate="musicIntelligenceApp.audioFeatures.analysisUrl">Analysis Url</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let audioFeatures of audioFeatures ;trackBy: trackId">
+                    <td><a [routerLink]="['/audio-features', audioFeatures.id, 'view']">{{ audioFeatures.id }}</a></td>
+                    <td>{{ audioFeatures.durationMs }}</td>
+                    <td>{{ audioFeatures.key }}</td>
+                    <td>{{ audioFeatures.mode }}</td>
+                    <td>{{ audioFeatures.timeSignature }}</td>
+                    <td>{{ audioFeatures.acousticness }}</td>
+                    <td>{{ audioFeatures.daceability }}</td>
+                    <td>{{ audioFeatures.energy }}</td>
+                    <td>{{ audioFeatures.instrumentalness }}</td>
+                    <td>{{ audioFeatures.liveness }}</td>
+                    <td>{{ audioFeatures.loudness }}</td>
+                    <td>{{ audioFeatures.speechiness }}</td>
+                    <td>{{ audioFeatures.valence }}</td>
+                    <td>{{ audioFeatures.tempo }}</td>
+                    <td>{{ audioFeatures.uri }}</td>
+                    <td>{{ audioFeatures.trackHref }}</td>
+                    <td>{{ audioFeatures.analysisUrl }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/audio-features', audioFeatures.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/audio-features', audioFeatures.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(audioFeatures)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

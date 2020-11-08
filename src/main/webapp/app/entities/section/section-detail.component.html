@@ -1,0 +1,80 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="section">
+            <h2><span jhiTranslate="musicIntelligenceApp.section.detail.title">Section</span> {{ section.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="musicIntelligenceApp.section.start">Start</span></dt>
+                <dd>
+                    <span>{{ section.start }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.section.duration">Duration</span></dt>
+                <dd>
+                    <span>{{ section.duration }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.section.confidence">Confidence</span></dt>
+                <dd>
+                    <span>{{ section.confidence }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.section.loudness">Loudness</span></dt>
+                <dd>
+                    <span>{{ section.loudness }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.section.tempo">Tempo</span></dt>
+                <dd>
+                    <span>{{ section.tempo }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.section.tempoConfidence">Tempo Confidence</span></dt>
+                <dd>
+                    <span>{{ section.tempoConfidence }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.section.key">Key</span></dt>
+                <dd>
+                    <span>{{ section.key }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.section.keyConfidence">Key Confidence</span></dt>
+                <dd>
+                    <span>{{ section.keyConfidence }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.section.mode">Mode</span></dt>
+                <dd>
+                    <span>{{ section.mode }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.section.modeConfidence">Mode Confidence</span></dt>
+                <dd>
+                    <span>{{ section.modeConfidence }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.section.timeSignature">Time Signature</span></dt>
+                <dd>
+                    <span>{{ section.timeSignature }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.section.timeSignatureConfidence">Time Signature Confidence</span></dt>
+                <dd>
+                    <span>{{ section.timeSignatureConfidence }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.section.audioAnalysis">Audio Analysis</span></dt>
+                <dd>
+                    <div *ngIf="section.audioAnalysis">
+                        <a [routerLink]="['/audio-analysis', section.audioAnalysis?.id, 'view']">{{ section.audioAnalysis?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/section', section.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

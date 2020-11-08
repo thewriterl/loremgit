@@ -1,0 +1,83 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="musicIntelligenceApp.timeInterval.home.title">Time Intervals</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-time-interval" [routerLink]="['/time-interval/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="musicIntelligenceApp.timeInterval.home.createLabel">
+            Create a new Time Interval
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="timeIntervals?.length === 0">
+        <span jhiTranslate="musicIntelligenceApp.timeInterval.home.notFound">No timeIntervals found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="timeIntervals && timeIntervals.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="musicIntelligenceApp.timeInterval.start">Start</span></th>
+                    <th scope="col" ><span jhiTranslate="musicIntelligenceApp.timeInterval.duration">Duration</span></th>
+                    <th scope="col" ><span jhiTranslate="musicIntelligenceApp.timeInterval.confidence">Confidence</span></th>
+                    <th scope="col" ><span jhiTranslate="musicIntelligenceApp.timeInterval.audioAnalysis">Audio Analysis</span></th>
+                    <th scope="col" ><span jhiTranslate="musicIntelligenceApp.timeInterval.audioAnalysis">Audio Analysis</span></th>
+                    <th scope="col" ><span jhiTranslate="musicIntelligenceApp.timeInterval.audioAnalysis">Audio Analysis</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let timeInterval of timeIntervals ;trackBy: trackId">
+                    <td><a [routerLink]="['/time-interval', timeInterval.id, 'view']">{{ timeInterval.id }}</a></td>
+                    <td>{{ timeInterval.start }}</td>
+                    <td>{{ timeInterval.duration }}</td>
+                    <td>{{ timeInterval.confidence }}</td>
+                    <td>
+                        <div *ngIf="timeInterval.audioAnalysis">
+                            <a [routerLink]="['/audio-analysis', timeInterval.audioAnalysis?.id, 'view']" >{{ timeInterval.audioAnalysis?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="timeInterval.audioAnalysis">
+                            <a [routerLink]="['/audio-analysis', timeInterval.audioAnalysis?.id, 'view']" >{{ timeInterval.audioAnalysis?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="timeInterval.audioAnalysis">
+                            <a [routerLink]="['/audio-analysis', timeInterval.audioAnalysis?.id, 'view']" >{{ timeInterval.audioAnalysis?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/time-interval', timeInterval.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/time-interval', timeInterval.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(timeInterval)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

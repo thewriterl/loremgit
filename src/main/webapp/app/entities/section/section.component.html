@@ -1,0 +1,89 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="musicIntelligenceApp.section.home.title">Sections</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-section" [routerLink]="['/section/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="musicIntelligenceApp.section.home.createLabel">
+            Create a new Section
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="sections?.length === 0">
+        <span jhiTranslate="musicIntelligenceApp.section.home.notFound">No sections found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="sections && sections.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="musicIntelligenceApp.section.start">Start</span></th>
+                    <th scope="col" ><span jhiTranslate="musicIntelligenceApp.section.duration">Duration</span></th>
+                    <th scope="col" ><span jhiTranslate="musicIntelligenceApp.section.confidence">Confidence</span></th>
+                    <th scope="col" ><span jhiTranslate="musicIntelligenceApp.section.loudness">Loudness</span></th>
+                    <th scope="col" ><span jhiTranslate="musicIntelligenceApp.section.tempo">Tempo</span></th>
+                    <th scope="col" ><span jhiTranslate="musicIntelligenceApp.section.tempoConfidence">Tempo Confidence</span></th>
+                    <th scope="col" ><span jhiTranslate="musicIntelligenceApp.section.key">Key</span></th>
+                    <th scope="col" ><span jhiTranslate="musicIntelligenceApp.section.keyConfidence">Key Confidence</span></th>
+                    <th scope="col" ><span jhiTranslate="musicIntelligenceApp.section.mode">Mode</span></th>
+                    <th scope="col" ><span jhiTranslate="musicIntelligenceApp.section.modeConfidence">Mode Confidence</span></th>
+                    <th scope="col" ><span jhiTranslate="musicIntelligenceApp.section.timeSignature">Time Signature</span></th>
+                    <th scope="col" ><span jhiTranslate="musicIntelligenceApp.section.timeSignatureConfidence">Time Signature Confidence</span></th>
+                    <th scope="col" ><span jhiTranslate="musicIntelligenceApp.section.audioAnalysis">Audio Analysis</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let section of sections ;trackBy: trackId">
+                    <td><a [routerLink]="['/section', section.id, 'view']">{{ section.id }}</a></td>
+                    <td>{{ section.start }}</td>
+                    <td>{{ section.duration }}</td>
+                    <td>{{ section.confidence }}</td>
+                    <td>{{ section.loudness }}</td>
+                    <td>{{ section.tempo }}</td>
+                    <td>{{ section.tempoConfidence }}</td>
+                    <td>{{ section.key }}</td>
+                    <td>{{ section.keyConfidence }}</td>
+                    <td>{{ section.mode }}</td>
+                    <td>{{ section.modeConfidence }}</td>
+                    <td>{{ section.timeSignature }}</td>
+                    <td>{{ section.timeSignatureConfidence }}</td>
+                    <td>
+                        <div *ngIf="section.audioAnalysis">
+                            <a [routerLink]="['/audio-analysis', section.audioAnalysis?.id, 'view']" >{{ section.audioAnalysis?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/section', section.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/section', section.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(section)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

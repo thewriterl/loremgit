@@ -1,0 +1,90 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-segment-heading" jhiTranslate="musicIntelligenceApp.segment.home.createOrEditLabel">Create or edit a Segment</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.segment.start" for="field_start">Start</label>
+                    <input type="number" class="form-control" name="start" id="field_start"
+                           formControlName="start"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.segment.duration" for="field_duration">Duration</label>
+                    <input type="number" class="form-control" name="duration" id="field_duration"
+                           formControlName="duration"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.segment.confidence" for="field_confidence">Confidence</label>
+                    <input type="number" class="form-control" name="confidence" id="field_confidence"
+                           formControlName="confidence"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.segment.loudnessStart" for="field_loudnessStart">Loudness Start</label>
+                    <input type="number" class="form-control" name="loudnessStart" id="field_loudnessStart"
+                           formControlName="loudnessStart"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.segment.loudnessMax" for="field_loudnessMax">Loudness Max</label>
+                    <input type="number" class="form-control" name="loudnessMax" id="field_loudnessMax"
+                           formControlName="loudnessMax"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.segment.loudnessMaxTime" for="field_loudnessMaxTime">Loudness Max Time</label>
+                    <input type="number" class="form-control" name="loudnessMaxTime" id="field_loudnessMaxTime"
+                           formControlName="loudnessMaxTime"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.segment.loudnessEnd" for="field_loudnessEnd">Loudness End</label>
+                    <input type="number" class="form-control" name="loudnessEnd" id="field_loudnessEnd"
+                           formControlName="loudnessEnd"/>
+                </div>
+
+                <div class="form-group">
+                    <label jhiTranslate="musicIntelligenceApp.segment.pitches" for="field_pitches">Pitches</label>
+                    <select class="form-control" id="field_pitches" multiple name="pitches" formControlName="pitches">
+                        <option [ngValue]="getSelected(editForm.get('pitches')!.value, pitchOption)" *ngFor="let pitchOption of pitches; trackBy: trackById">{{ pitchOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label jhiTranslate="musicIntelligenceApp.segment.timbre" for="field_timbres">Timbre</label>
+                    <select class="form-control" id="field_timbres" multiple name="timbres" formControlName="timbres">
+                        <option [ngValue]="getSelected(editForm.get('timbres')!.value, timbreOption)" *ngFor="let timbreOption of timbres; trackBy: trackById">{{ timbreOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.segment.audioAnalysis" for="field_audioAnalysis">Audio Analysis</label>
+                    <select class="form-control" id="field_audioAnalysis" name="audioAnalysis" formControlName="audioAnalysis">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="audioAnalysisOption.id === editForm.get('audioAnalysis')!.value?.id ? editForm.get('audioAnalysis')!.value : audioAnalysisOption" *ngFor="let audioAnalysisOption of audioanalyses; trackBy: trackById">{{ audioAnalysisOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

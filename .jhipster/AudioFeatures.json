@@ -1,0 +1,89 @@
+{
+  "name": "AudioFeatures",
+  "fields": [
+    {
+      "fieldName": "durationMs",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "key",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "mode",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "timeSignature",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "acousticness",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "daceability",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "energy",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "instrumentalness",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "liveness",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "loudness",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "speechiness",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "valence",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "tempo",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "uri",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "trackHref",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "analysisUrl",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "track",
+      "otherEntityRelationshipName": "audioFeatures",
+      "relationshipName": "track",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20201108024929",
+  "entityTableName": "audio_features",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": ["MusicIntelligence"]
+}

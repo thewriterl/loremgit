@@ -14,7 +14,27 @@
     <property name="uuidType" value="uuid" dbms="h2, postgresql"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201108023729_added_entity_Image.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201108023829_added_entity_Genre.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201108023929_added_entity_ExternalURL.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201108024029_added_entity_Artist.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201108024129_added_entity_Album.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201108024229_added_entity_Track.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201108024329_added_entity_TimeInterval.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201108024429_added_entity_AudioAnalysis.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201108024529_added_entity_Section.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201108024629_added_entity_Segment.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201108024729_added_entity_Pitch.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201108024829_added_entity_Timbre.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201108024929_added_entity_AudioFeatures.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20201108023829_added_entity_constraints_Genre.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201108024029_added_entity_constraints_Artist.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201108024129_added_entity_constraints_Album.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201108024229_added_entity_constraints_Track.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201108024329_added_entity_constraints_TimeInterval.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201108024529_added_entity_constraints_Section.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201108024629_added_entity_constraints_Segment.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
 </databaseChangeLog>

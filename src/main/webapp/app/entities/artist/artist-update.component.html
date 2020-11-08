@@ -1,0 +1,88 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-artist-heading" jhiTranslate="musicIntelligenceApp.artist.home.createOrEditLabel">Create or edit a Artist</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.artist.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                           formControlName="name"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.artist.popularity" for="field_popularity">Popularity</label>
+                    <input type="number" class="form-control" name="popularity" id="field_popularity"
+                           formControlName="popularity"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.artist.idSpotify" for="field_idSpotify">Id Spotify</label>
+                    <input type="text" class="form-control" name="idSpotify" id="field_idSpotify"
+                           formControlName="idSpotify"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.artist.href" for="field_href">Href</label>
+                    <input type="text" class="form-control" name="href" id="field_href"
+                           formControlName="href"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.artist.followers" for="field_followers">Followers</label>
+                    <input type="number" class="form-control" name="followers" id="field_followers"
+                           formControlName="followers"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.artist.image" for="field_image">Image</label>
+                    <select class="form-control" id="field_image" name="image" formControlName="image">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="imageOption.id === editForm.get('image')!.value?.id ? editForm.get('image')!.value : imageOption" *ngFor="let imageOption of images; trackBy: trackById">{{ imageOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.artist.externalURL" for="field_externalURL">External URL</label>
+                    <select class="form-control" id="field_externalURL" name="externalURL" formControlName="externalURL">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="externalURLOption.id === editForm.get('externalURL')!.value?.id ? editForm.get('externalURL')!.value : externalURLOption" *ngFor="let externalURLOption of externalurls; trackBy: trackById">{{ externalURLOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.artist.album" for="field_album">Album</label>
+                    <select class="form-control" id="field_album" name="album" formControlName="album">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="albumOption.id === editForm.get('album')!.value?.id ? editForm.get('album')!.value : albumOption" *ngFor="let albumOption of albums; trackBy: trackById">{{ albumOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="musicIntelligenceApp.artist.track" for="field_track">Track</label>
+                    <select class="form-control" id="field_track" name="track" formControlName="track">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="trackOption.id === editForm.get('track')!.value?.id ? editForm.get('track')!.value : trackOption" *ngFor="let trackOption of tracks; trackBy: trackById">{{ trackOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

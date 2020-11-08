@@ -1,0 +1,70 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="album">
+            <h2><span jhiTranslate="musicIntelligenceApp.album.detail.title">Album</span> {{ album.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="musicIntelligenceApp.album.albumType">Album Type</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'musicIntelligenceApp.AlbumType.' + album.albumType }}">{{ album.albumType }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.album.href">Href</span></dt>
+                <dd>
+                    <span>{{ album.href }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.album.idSpotify">Id Spotify</span></dt>
+                <dd>
+                    <span>{{ album.idSpotify }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.album.label">Label</span></dt>
+                <dd>
+                    <span>{{ album.label }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.album.name">Name</span></dt>
+                <dd>
+                    <span>{{ album.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.album.popularity">Popularity</span></dt>
+                <dd>
+                    <span>{{ album.popularity }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.album.releaseDate">Release Date</span></dt>
+                <dd>
+                    <span>{{ album.releaseDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.album.uri">Uri</span></dt>
+                <dd>
+                    <span>{{ album.uri }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.album.image">Image</span></dt>
+                <dd>
+                    <div *ngIf="album.image">
+                        <a [routerLink]="['/image', album.image?.id, 'view']">{{ album.image?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.album.externalURL">External URL</span></dt>
+                <dd>
+                    <div *ngIf="album.externalURL">
+                        <a [routerLink]="['/external-url', album.externalURL?.id, 'view']">{{ album.externalURL?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/album', album.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

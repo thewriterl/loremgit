@@ -1,0 +1,69 @@
+{
+  "name": "Segment",
+  "fields": [
+    {
+      "fieldName": "start",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "duration",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "confidence",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "loudnessStart",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "loudnessMax",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "loudnessMaxTime",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "loudnessEnd",
+      "fieldType": "Float"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "pitch",
+      "otherEntityRelationshipName": "segment",
+      "relationshipName": "pitches",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "timbre",
+      "otherEntityRelationshipName": "segment",
+      "relationshipName": "timbre",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "audioAnalysis",
+      "otherEntityRelationshipName": "segments",
+      "relationshipName": "audioAnalysis",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201108024629",
+  "entityTableName": "segment",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": ["MusicIntelligence"]
+}

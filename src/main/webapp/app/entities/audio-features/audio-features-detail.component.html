@@ -1,0 +1,90 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="audioFeatures">
+            <h2><span jhiTranslate="musicIntelligenceApp.audioFeatures.detail.title">Audio Features</span> {{ audioFeatures.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="musicIntelligenceApp.audioFeatures.durationMs">Duration Ms</span></dt>
+                <dd>
+                    <span>{{ audioFeatures.durationMs }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.audioFeatures.key">Key</span></dt>
+                <dd>
+                    <span>{{ audioFeatures.key }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.audioFeatures.mode">Mode</span></dt>
+                <dd>
+                    <span>{{ audioFeatures.mode }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.audioFeatures.timeSignature">Time Signature</span></dt>
+                <dd>
+                    <span>{{ audioFeatures.timeSignature }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.audioFeatures.acousticness">Acousticness</span></dt>
+                <dd>
+                    <span>{{ audioFeatures.acousticness }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.audioFeatures.daceability">Daceability</span></dt>
+                <dd>
+                    <span>{{ audioFeatures.daceability }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.audioFeatures.energy">Energy</span></dt>
+                <dd>
+                    <span>{{ audioFeatures.energy }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.audioFeatures.instrumentalness">Instrumentalness</span></dt>
+                <dd>
+                    <span>{{ audioFeatures.instrumentalness }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.audioFeatures.liveness">Liveness</span></dt>
+                <dd>
+                    <span>{{ audioFeatures.liveness }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.audioFeatures.loudness">Loudness</span></dt>
+                <dd>
+                    <span>{{ audioFeatures.loudness }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.audioFeatures.speechiness">Speechiness</span></dt>
+                <dd>
+                    <span>{{ audioFeatures.speechiness }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.audioFeatures.valence">Valence</span></dt>
+                <dd>
+                    <span>{{ audioFeatures.valence }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.audioFeatures.tempo">Tempo</span></dt>
+                <dd>
+                    <span>{{ audioFeatures.tempo }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.audioFeatures.uri">Uri</span></dt>
+                <dd>
+                    <span>{{ audioFeatures.uri }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.audioFeatures.trackHref">Track Href</span></dt>
+                <dd>
+                    <span>{{ audioFeatures.trackHref }}</span>
+                </dd>
+                <dt><span jhiTranslate="musicIntelligenceApp.audioFeatures.analysisUrl">Analysis Url</span></dt>
+                <dd>
+                    <span>{{ audioFeatures.analysisUrl }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/audio-features', audioFeatures.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+{
+  "name": "ExternalURL",
+  "fields": [
+    {
+      "fieldName": "source",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "href",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "artist",
+      "otherEntityRelationshipName": "externalURL",
+      "relationshipName": "artist",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "album",
+      "otherEntityRelationshipName": "externalURL",
+      "relationshipName": "album",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "track",
+      "otherEntityRelationshipName": "externalURL",
+      "relationshipName": "track",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20201108023929",
+  "entityTableName": "external_url",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": ["MusicIntelligence"]
+}

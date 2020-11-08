@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { TestetsetsetSharedModule } from 'app/shared/shared.module';
+import { MusicIntelligenceSharedModule } from 'app/shared/shared.module';
 
 import { AuditsComponent } from './audits.component';
 
 import { auditsRoute } from './audits.route';
 
 @NgModule({
-  imports: [TestetsetsetSharedModule, RouterModule.forChild([auditsRoute])],
+  imports: [MusicIntelligenceSharedModule, RouterModule.forChild([auditsRoute])],
   declarations: [AuditsComponent],
 })
 export class AuditsModule {}

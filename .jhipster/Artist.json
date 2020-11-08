@@ -1,0 +1,74 @@
+{
+  "name": "Artist",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "popularity",
+      "fieldType": "Float"
+    },
+    {
+      "fieldName": "idSpotify",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "href",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "followers",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "image",
+      "otherEntityRelationshipName": "artist",
+      "relationshipName": "image",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "externalURL",
+      "otherEntityRelationshipName": "artist",
+      "relationshipName": "externalURL",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "genre",
+      "otherEntityRelationshipName": "artist",
+      "relationshipName": "genre"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "album",
+      "otherEntityRelationshipName": "artist",
+      "relationshipName": "album",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "track",
+      "otherEntityRelationshipName": "artist",
+      "relationshipName": "track",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201108024029",
+  "entityTableName": "artist",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": ["MusicIntelligence"]
+}
